@@ -4,6 +4,7 @@ $(function() {
     $("form").on("submit", function(e) {
        e.preventDefault();
        // prepare the request
+        console.log($("#search").val());
        var request = gapi.client.youtube.search.list({
             part: "snippet",
             type: "video",
@@ -15,6 +16,7 @@ $(function() {
        // execute the request
        request.execute(function(response) {
           var results = response.result;
+          console.log(result);
           $("#vidResults").html("");
           $.each(results.items, function(index, item) {
             $.get("item.html", function(data) {
