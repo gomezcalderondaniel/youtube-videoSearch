@@ -5,6 +5,7 @@ $(function() {
        e.preventDefault();
        // prepare the request
         console.log($("#search").val());
+        
        var request = gapi.client.youtube.search.list({
             part: "snippet",
             type: "video",
@@ -12,7 +13,8 @@ $(function() {
             maxResults: 3,
             order: "viewCount",
             publishedAfter: "2017-01-01T00:00:00Z"
-       }); 
+       });
+        console.log(request)
        // execute the request
        request.execute(function(response) {
           var results = response.result;
