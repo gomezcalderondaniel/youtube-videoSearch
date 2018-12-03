@@ -22,7 +22,7 @@ $(function() {
           $("#vidResults").html("");
           $.each(results.items, function(index, item) {
             $.get("item.html", function(data) {
-                $("#results").append(tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId}]));
+                $("#vidResults").append(tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId}]));
             });
           });
           resetVideoHeight();
