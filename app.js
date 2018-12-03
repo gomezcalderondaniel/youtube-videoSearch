@@ -18,7 +18,7 @@ $(function() {
        // execute the request
        request.execute(function(response) {
           var results = response.result;
-          console.log(result);
+          console.log(results);
           $("#vidResults").html("");
           $.each(results.items, function(index, item) {
             $.get("item.html", function(data) {
